@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :book do
     genre "Science"
-    author "Włodzimerz Gajda"
+    sequence(:author){|n| "#{n}author"}
   end
 end

@@ -54,5 +54,8 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
- 
+
+  def json(body)
+    JSON.parse(body)
+  end
 end

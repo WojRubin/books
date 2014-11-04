@@ -1,9 +1,9 @@
 Books::Application.routes.draw do
-  get "books/index"
+  root "welcome#index"
 
-  namespace :api, defaults: { format: :json } do
+  namespace :api do
     namespace :v1 do
-      resources :books, only: [:index]
+      resources :books
     end
   end
   
