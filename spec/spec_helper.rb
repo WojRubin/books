@@ -56,6 +56,6 @@ RSpec.configure do |config|
   end
 
   def json(body)
-    JSON.parse(body)
+    JSON.parse(body, symbolize_names: true)
   end
 end

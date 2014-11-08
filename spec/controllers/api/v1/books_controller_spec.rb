@@ -39,4 +39,24 @@ describe Api::V1::BooksController, :type => :controller do
       expect(response.content_type).to eq(Mime::JSON)
     end
   end
+
+  describe "add new book" do
+    before do
+      valid_attributes = FactoryGirl.build(:book).attributes
+      post :create, {:book => valid_attributes}
+    end
+
+    it "returns a successful 201 response" do  
+      expect(response.status).to eq(201)
+    end
+
+    it "return response in JSON format" do
+      expect(response.content_type).to eq(Mime::JSON)
+    end
+
+    it "returns location" do
+      book = json(response.body)
+      expect(api_v1_book_url(book)).to eq(response.location)
+    end
+  end
 end
