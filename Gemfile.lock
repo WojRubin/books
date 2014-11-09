@@ -171,11 +171,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner (= 1.0.1)
   email_spec
-  ember-rails (~> 0.15.0)
+  ember-rails
+  ember-source
   factory_girl_rails
   haml
   jbuilder (~> 1.2)

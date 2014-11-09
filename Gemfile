@@ -29,7 +29,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'haml'
 
-gem 'ember-rails', '~> 0.15.0'
+gem 'ember-rails'
+gem 'ember-source'
+gem 'active_model_serializers'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
