@@ -1,3 +1,3 @@
 Books.BooksRoute = Ember.Route.extend
   model: -> 
-    return this.store.find('book');
+    return this.store.findAll('book')
