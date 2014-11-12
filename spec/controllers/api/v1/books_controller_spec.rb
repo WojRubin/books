@@ -13,7 +13,7 @@ describe Api::V1::BooksController, :type => :controller do
     end
 
     it "returns a count of books" do
-      expect(Book.count).to eq(json(response.body).size)
+      expect((json(response.body)[:books]).size).to eq(Book.count)
     end
 
     it "return response in JSON format" do
@@ -32,7 +32,7 @@ describe Api::V1::BooksController, :type => :controller do
     end
 
     it "returns a count of books" do
-      expect(json(response.body).size).to eq(json(response.body).size)
+      expect((json(response.body)).size).to eq(1)
     end
 
     it "return response in JSON format" do
@@ -41,9 +41,8 @@ describe Api::V1::BooksController, :type => :controller do
   end
 
   describe "add new book" do
-    before do
-      valid_attributes = FactoryGirl.build(:book).attributes
-      post :create, {:book => valid_attributes}
+    before :each do
+      post :create, format: :json, :book => {author: 'Alf', genre: 'sf'}
     end
 
     it "returns a successful 201 response" do  
@@ -55,8 +54,8 @@ describe Api::V1::BooksController, :type => :controller do
     end
 
     it "returns location" do
-      book = json(response.body)
-      expect(api_v1_book_url(book)).to eq(response.location)
+      id = json(response.body)[:book][:id]
+      expect(response.location).to eq(api_v1_book_url(id))
     end
   end
 end
