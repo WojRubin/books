@@ -19,16 +19,16 @@ module Api
       end
 
       def create
-        book = Book.create(book_params)
+        book = Book.new(book_params)
         if book.save
-          render json: book, status: 201, location: api_v1_book_url(book)
-        end
-
+          respond_with book, status: 201, location: api_v1_book_url(book)
         else
+          respond_with book.errors, status: 422
+        end
       end
 
       def book_params
-        params.require(:book).permit
+        params.require(:book).permit(:author, :genre)
       end
 
     end

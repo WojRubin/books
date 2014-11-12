@@ -1,3 +1,2 @@
-Books.BooksController = Ember.ArrayController.extend({
+Books.BooksController = Ember.ArrayController.extend
   sortProperties: ['author']
-});
