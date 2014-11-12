@@ -1,7 +1,17 @@
-<ul>
-{{#each}}
-<li>{{#link-to 'book' this classNames='list-group-item'}}{{author}}{{/link-to}}</li>
-{{/each}}
-</ul>
-{{#link-to 'books.new'}}Create New Book{{/link-to}}
-{{outlet}}
+<nav class="navbar navbar-default">
+  <a class="navbar-brand" href="#">WojEmber</a>
+</nav>
+<div id="container">
+  <div id="left_column">
+    <ul class='list-group'>
+      {{#each}}
+        <li class='list-group-item'>{{#link-to 'book' this}}{{author}}{{/link-to}}</li>
+      {{/each}}
+    </ul> 
+    {{#link-to 'books.new' class='btn btn-primary'}}Create New Book{{/link-to}}
+  </div>
+  <div id="right_column">
+    {{outlet}}
+  </div>
+  
+</div>

@@ -1,3 +1,11 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+body, div{margin: 0;}
+#left_column{width: 30%; float: left; padding: 10px;}
+#right_column{width: 60%; float: right}
+#container{width: 980px;margin: 0 auto;}
+.my_form{padding: 15px; background-color: #EEE;}

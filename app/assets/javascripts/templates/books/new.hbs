@@ -1,5 +1,15 @@
-<form {{action 'save' on='submit'}}>
-author: {{input type="text" value=author}}
-gatuner: {{input type="text" value=genre}}
-<button type="submit" class="btn">Create</button>
+<form class="my_form"{{action 'save' on='submit'}}>
+  <div class="col-md-6">
+    <div class="form-group row">
+      <span class="col-md-1 control-label">author: </span>
+      {{input type="text" value=author class="form-control"}}
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group row">
+      <span class="col-md-1 control-label">genre: </span>
+      {{input type="text" value=genre class="form-control"}}
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
 </form>

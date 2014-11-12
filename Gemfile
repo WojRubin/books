@@ -32,6 +32,7 @@ gem 'haml'
 gem 'ember-rails'
 gem 'ember-source'
 gem 'active_model_serializers'
+gem 'bootstrap-sass', '>= 3.0.0.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
