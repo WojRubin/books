@@ -55,8 +55,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: books_production
-  host: localhost
+  database: d88rmpii3nrls8
+  host: ec2-54-204-45-126.compute-1.amazonaws.com
   pool: 5
-  username: books
-  password: kotik1234
+  username: myojmckeldtkxw
+  password: laQzC0TsDNvVu6fsu3EI54PFuI
