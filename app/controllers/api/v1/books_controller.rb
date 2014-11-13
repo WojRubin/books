@@ -27,6 +27,12 @@ module Api
         end
       end
 
+      def destroy
+        book = Book.find(params[:id])
+        book.destroy!
+        render nothing:true, status: 204
+      end
+
       def book_params
         params.require(:book).permit(:author, :genre)
       end
