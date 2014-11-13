@@ -27,6 +27,15 @@ module Api
         end
       end
 
+      def update
+        book = Book.find(params[:id])
+        if book.update_attributes(book_params)
+          respond_with book, status: 200
+        else
+          respond_with book.errors, status: :unprocessable_entity
+        end
+      end
+
       def destroy
         book = Book.find(params[:id])
         book.destroy!

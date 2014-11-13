@@ -68,8 +68,21 @@ describe Api::V1::BooksController, :type => :controller do
       delete :destroy, id: @book
       expect(response.status).to eq(204)
     end
+  end
 
+  describe "update book" do
+    before :each do
+      @book = create(:book)
+      @attr = {author: 'Alf', genre: 'sf'}
+      patch :update, format: :json, id: @book, :book => @attr
+    end
 
-  
+    it "returns a successful response" do 
+      expect(response).to be_successful
+    end
+    
+    it "change author" do
+      expect(Book.find(@book).author).to eq('Alf')
+    end
   end
 end

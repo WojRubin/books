@@ -1,0 +1,1 @@
+Books.BooksShowRoute = Books.BookRoute.extend()

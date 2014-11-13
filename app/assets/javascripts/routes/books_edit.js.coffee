@@ -1,0 +1,1 @@
+Books.BooksEditRoute = Books.BookRoute.extend()
