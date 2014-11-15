@@ -6,10 +6,10 @@ module Api
         books = Book.all
         
         if author = params[:author]
-          books = Book.where(author: author)
+          books = Book.joins(:authors).where(:authors.name => author)
         end
    
-        respond_with books, status: 200       
+        respond_with books, status: 200      
       end
 
       def show
