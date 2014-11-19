@@ -10,4 +10,3 @@ Books.BookAdapter = Books.Adapter.extend()
 Books.AuthorAdapter = Books.Adapter.extend()
 
 Books.ApplicationSerializer = DS.ActiveModelSerializer.extend()
-Books.ApplicationSerializer.typeForRoot("id")

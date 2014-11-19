@@ -14,7 +14,7 @@ module Api
       def create
         author = Author.new(author_params)
         if author.save
-          respond_with author, status: 201, location: api_v1_book_url(author)
+          respond_with author, status: 201, location: api_v1_author_url(author)
         else
           respond_with author.errors, status: 422
         end
@@ -35,8 +35,8 @@ module Api
         render nothing:true, status: 204
       end
 
-      def genre_params
-        params.require(:book).permit(:name)
+      def author_params
+        params.require(:author).permit(:first_name, :last_name)
       end
     end
   end

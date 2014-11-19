@@ -7,6 +7,8 @@
   {{input type="text" value=genre.name class="form-control"}}
 </div>
 <div class="form-group">
+  {{#each author in model.authors}}
   <span class="control-label">author: </span>
   {{input type="text" value=author.last_name class="form-control"}}
+  {{/each}}
 </div>

@@ -16,7 +16,7 @@ module Api
       def create
         genre = Genre.new(genre_params)
         if genre.save
-          respond_with genre, status: 201, location: api_v1_book_url(genre)
+          respond_with genre, status: 201, location: api_v1_genre_url(genre)
         else
           respond_with genre.errors, status: 422
         end

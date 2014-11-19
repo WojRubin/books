@@ -3,11 +3,7 @@ module Api
     class BooksController < ApplicationController
       respond_to :json
       def index
-        books = Book.includes(:genre).all
-        
-        if author = params[:author]
-          books = Book.joins(:authors).where(:authors.name => author)
-        end
+        books = Book.all
    
         respond_with books, status: 200      
       end
