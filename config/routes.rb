@@ -7,6 +7,7 @@ Books::Application.routes.draw do
     namespace :v1 do
       resources :books
       resources :genres
+      resources :authors
     end
   end
   

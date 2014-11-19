@@ -5,7 +5,7 @@
   <div id="left_column">
     <ul class='list-group'>
       {{#each}}
-        <li class='list-group-item'>{{#link-to 'books.edit' this}}{{author}}{{/link-to}}</li>
+        <li class='list-group-item'>{{#link-to 'books.edit' this}}{{name}}{{/link-to}} {{genre.name}}</li>
       {{/each}}
     </ul> 
     {{#link-to 'books.new' class='btn btn-primary'}}Create New Book{{/link-to}}

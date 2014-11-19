@@ -3,9 +3,42 @@ module Api
     class GenresController < ApplicationController
       respond_to :json
       def index
-        genres = Genre.all
+        genre = Genre.all
 
-        respond_with genres, status: 200
+        respond_with genre, status: 200
+      end
+      def show
+        genre = Genre.find(params[:id])
+
+        respond_with genre, status: 200
+      end
+
+      def create
+        genre = Genre.new(genre_params)
+        if genre.save
+          respond_with genre, status: 201, location: api_v1_book_url(genre)
+        else
+          respond_with genre.errors, status: 422
+        end
+      end
+
+      def update
+        genre = Genre.find(params[:id])
+        if genre.update_attributes(genre_params)
+          respond_with genre, status: 200
+        else
+          respond_with genre.errors, status: :unprocessable_entity
+        end
+      end
+
+      def destroy
+        genre = Genre.find(params[:id])
+        genre.destroy!
+        render nothing:true, status: 204
+      end
+
+      def genre_params
+        params.require(:book).permit(:name)
       end
     end
   end

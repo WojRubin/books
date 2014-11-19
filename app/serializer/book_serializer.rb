@@ -1,4 +1,6 @@
 class BookSerializer < ApplicationSerializer
-  attributes :id, :name, :isbn, :description
-  belongs_to :genre
+  
+  attributes :id, :name, :isbn, :description, :genre_id
+
+  has_many :authors
 end
