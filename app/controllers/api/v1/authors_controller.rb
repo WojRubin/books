@@ -35,6 +35,8 @@ module Api
         render nothing:true, status: 204
       end
 
+    private
+    
       def author_params
         params.require(:author).permit(:first_name, :last_name)
       end

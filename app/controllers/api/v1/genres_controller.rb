@@ -36,6 +36,8 @@ module Api
         genre.destroy!
         render nothing:true, status: 204
       end
+    
+    private
 
       def genre_params
         params.require(:book).permit(:name)

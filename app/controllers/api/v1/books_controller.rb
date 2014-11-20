@@ -38,6 +38,8 @@ module Api
         render nothing:true, status: 204
       end
 
+    private
+    
       def book_params
         params.require(:book).permit(:name, :description, :isbn)
       end

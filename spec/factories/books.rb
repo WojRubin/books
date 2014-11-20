@@ -1,6 +1,9 @@
 FactoryGirl.define do
   factory :book do
-    genre "Science"
-    sequence(:author){|n| "#{n}author"}
+    name "Rails in Action"
+    isbn "5656565"
+    description "Good position in Your bookcase"
+    authors{ |a| [a.association(:author)]}
+    association :genre
   end
 end
