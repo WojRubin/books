@@ -54,7 +54,7 @@ describe Api::V1::BooksController, :type => :controller do
   describe "update book" do
     before :each do
       @book = create(:book)
-      @attr = {author: 'Alf', genre: 'sf'}
+      @attr = attributes_for(:genre)
       patch :update, format: :json, id: @book, :book => @attr
     end
 
